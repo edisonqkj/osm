@@ -1,0 +1,14 @@
+<html>
+<body>
+	<div id='mymap'>
+		<script src="http://www.openlayers.org/api/OpenLayers.js">
+		</script>
+		<script type="text/javascript">
+		map=new OpenLayers.Map('mymap',{projection: "EPSG:900913",displayProjection: "EPSG:4326"});
+		map.addLayer(new OpenLayers.Layer.OSM());
+		var markers = new OpenLayers.Layer.Text("text", {location: "./markers.txt",projection: map.displayProjection});
+		map.addLayer(markers);
+		map.zoomToMaxExtent();
+	</script></div>
+</body>
+</html>
